@@ -1,0 +1,8 @@
+{
+    "name": "QAiRT NPU API",
+    "id": "qairt_npu_api",
+    "description": "Exposes an NPU-accelerated txt2img API using qairt_accelerate",
+    "author": "Steve Dafer",
+    "version": "1.0.0",
+    "required": ["qairt_accelerate"]
+}
