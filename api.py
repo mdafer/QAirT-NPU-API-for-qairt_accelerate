@@ -74,12 +74,6 @@ def txt2img(req: GenerationRequest):
             text_guidance=req.cfg_scale,
             sampler_name=req.sampler,
             model_name=req.model,
-            width=req.width,
-            height=req.height,
-            batch_size=req.batch_size,
-            n_iter=req.n_iter,
-            eta=req.eta,
-            clip_skip=req.clip_skip,
         )
 
         # 4️⃣ Generate image using QNN
