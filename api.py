@@ -38,6 +38,10 @@ class GenerationRequest(BaseModel):
     sampler: str = "DPM++ 3M SDE"  # default sampler
     seed: int = -1  # -1 for random
     model: str = "Stable-Diffusion-2.1"  # default model
+    batch_size: int = 1  # number of images per batch
+    n_iter: int = 1  # number of batches/iterations
+    eta: float = 0.0  # noise multiplier for certain samplers
+    clip_skip: int = 1  # CLIP layers to skip from text encoder end
 
 # ---------------------------
 # Initialize FastAPI
@@ -70,6 +74,12 @@ def txt2img(req: GenerationRequest):
             text_guidance=req.cfg_scale,
             sampler_name=req.sampler,
             model_name=req.model,
+            width=req.width,
+            height=req.height,
+            batch_size=req.batch_size,
+            n_iter=req.n_iter,
+            eta=req.eta,
+            clip_skip=req.clip_skip,
         )
 
         # 4️⃣ Generate image using QNN

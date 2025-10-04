@@ -49,7 +49,11 @@ curl -X POST http://localhost:7861/txt2img \
     "cfg_scale": 7.5,
     "sampler": "DPM++ 3M SDE",
     "seed": -1,
-    "model": "Stable-Diffusion-2.1"
+    "model": "Stable-Diffusion-2.1",
+    "batch_size": 1,
+    "n_iter": 1,
+    "eta": 0.0,
+    "clip_skip": 1
   }'
 ```
 
